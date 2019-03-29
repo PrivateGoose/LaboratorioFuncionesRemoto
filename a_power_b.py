@@ -9,3 +9,9 @@ def potencia(a,b):
   print(elev)
 
 potencia(a,b)
+
+while True:
+  a=int(input(b))
+  elev=elev*a
+  if a==0:
+    break
