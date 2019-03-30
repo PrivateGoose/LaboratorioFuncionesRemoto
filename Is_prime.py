@@ -1,14 +1,27 @@
-def is_prime():
- 
-    number=int(input("Type a number to check if it is prime or not: "))
+def is_prime(number):
 
-    counter = 0
-    for i in range(1,number+1):
-        if (number% i)==0:
-            counter = counter + 1
-    if counter==2:
-        print ("The number you typed: {} is a prime number".format(number))
+        try:
+            counter = 0
+            for i in range(1,number+1):
+                if (number% i)==0:
+                    counter = counter + 1
+            if counter==2:
+                print ("1")
+            else:
+                print ("0")
+        except:
+            print("-1")
+
+counter = 0
+
+while True:
+    a=int(input("Type a number to check if it is a prime number, if you wish to proceed, press any number, if you do not want to proceed, press a number equal or less than 0: "))
+    if a<0:
+        print("Program finalized")
+        print("The number of times you got a prime number is: {}".format(counter))
+        break
     else:
-        print ("The number you typed: {} is not a prime number.".format(number))
-
-is_prime()
+        if a > 0:
+            counter= counter + 1
+            number=int(input("Type your number: "))
+            print(is_prime(number))
